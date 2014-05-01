@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<script type='text/javascript'>
+  var Ocean = [[0,0,0,0,0,0,1,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]
+  function createOcean() {
+    for (y = 0;y <= Ocean.length;y++) {
+      for (x = 0;x <= Ocean[y].length;x++) {
+        if (Ocean[y][x] === 0) {
+          var div = document.createElement('div');
+          div.id = 'x' + x + 'y' + y;
+          div.className = ' ocean';
+          document.getElementsByTagName('body')[0].appendChild(div);
+        } else if (Ocean[y][x] === 1) {
+          var div = document.createElement('div');
+          div.id = 'x' + x + 'y' + y;
+          div.className = ' boat';
+          document.getElementsByTagName('body')[0].appendChild(div);
+        }
+      }
+      var br = document.createElement('br');
+      document.getElementsByTagName('body')[0].appendChild(br);
+    }
+  }
+</script>
+<style type='text/css'>
+  div {
+    height:46px;
+    width:46px;
+    border:2px solid black;
+    display:inline-block;
+  }
+  .ocean {
+    background-color:blue;
+  }
+  .boat {
+    background-color:gray;
+  }
+</style>
+<html>
+  <body onload='createOcean();'>
+    
+  </body>
+</html>
